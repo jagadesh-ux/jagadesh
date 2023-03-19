@@ -1,0 +1,42 @@
+                                            Ansible instalation     
+                                       Master And Agent Comman Stepes
+    1. sudo -i
+    2. cd opt/
+    3. apt update
+    4. apt upgrade
+    5. apt install net-tools
+    6. hostname master >>>>>>we are give name 
+    7. sudo -i....we are going to master
+    8. vi /etc/hosts.....we are giving master and agent public ips
+    9. vi /etc/hostname..we are giving master and agent public ips
+    10.ping agent.....we are in master we ping agent 
+                      we are in agent we ping maste
+
+                                                 Master
+
+
+we have Ansible Insatlation that purpose we have properties and repositories so we will fallow below steps
+
+
+    11.sudo apt install software-properties-common......Properties Install 
+    12 sudo add-apt-repository --yes --update ppa:ansible/ansible.....Repository install
+    13.sudo apt install ansible......Ansible install
+    14.vi /etc/ansible/hosts.....We are geving agent
+    15.ssh-keygen -t rsa....Key genarate purpose 
+    16.cat /root/.ssh/id_rsa.pub....We Got Big Key.that key we past agent
+
+
+                                                 Agent
+
+
+    17.vi ~/.ssh/authorized_keys.....we past the key this place
+
+
+
+                                                 Master
+    
+
+
+    18.ansible -m ping all....we got sucessfull after we write script
+
+    
