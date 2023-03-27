@@ -1,0 +1,49 @@
+1  wget https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_386.zip
+    2  ls
+    3  unzip terraform_1.3.7_linux_386.zip
+    4  ls
+    5  echo $"export PATH=/$PATH:$(pwd)" >> ~/.bash_profile
+    6  source ~/.bash_profile
+    7  terraform
+    8  terraform --version
+    9  mkdir sam    
+   10  cd sam
+   11  pwd
+   12  vi provider.tf......we are gevining permission to the aws Provider to communicate with Terraform[Terraform Provider Script in Chrome]
+        
+       provider "aws" {
+         region     = "us-west-2"
+         access_key = "my-access-key"
+         secret_key = "my-secret-key"
+       } 
+      
+       Note...This access and secret keys we are create in IAM Access key after we are geving this place     
+  
+   13  terraform init
+   14  ls -al....................hiden files showing
+   15  cat .terraform.lock.hcl......this is optional[not important this line]
+   16  vi vpc.tf................we are create any file name in this line 
+
+        resource "aws_vpc" "main" {
+          cidr_block       = "10.0.0.0/16"
+          instance_tenancy = "default"
+
+          tags = {
+            Name = "main"
+        }
+       }                                     
+
+   17  terraform plan
+   18  terraform apply
+   19  vi vpc.tf
+   20  terraform validate
+   21  terraform plan
+   22  terraform apply --auto-approve
+   23  ls
+   24  terraform state list
+   25  terraform destroy
+
+
+
+
+AKIA4BRRLF5PJJODA5WI
