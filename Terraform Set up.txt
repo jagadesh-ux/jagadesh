@@ -42,7 +42,7 @@
    23  ls
    24  terraform state list
    25  terraform destroy
-
+   26  terraform view
 
 
 
